@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>web项目开发规范整理总结 - www.luoguibin.top</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="www.luoguibin.top"><meta name="msapplication-TileImage" content="/images/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="www.luoguibin.top"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="最近开发了两个项目，基于在php中嵌入html的模式开发的，所以总结了些规范，可能不对，如有错误，欢迎指正。"><meta property="og:type" content="blog"><meta property="og:title" content="web项目开发规范整理总结"><meta property="og:url" content="http://www.luoguibin.top/2016/12/15/%E5%89%8D%E7%AB%AF/2016-12-15_web%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E6%95%B4%E7%90%86%E6%80%BB%E7%BB%93/"><meta property="og:site_name" content="www.luoguibin.top"><meta property="og:description" content="最近开发了两个项目，基于在php中嵌入html的模式开发的，所以总结了些规范，可能不对，如有错误，欢迎指正。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://www.luoguibin.top/images/%E5%89%8D%E7%AB%AF/2016-12-15_web%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E6%95%B4%E7%90%86%E6%80%BB%E7%BB%93/1.png"><meta property="article:published_time" content="2016-12-15T06:58:45.000Z"><meta property="article:modified_time" content="2024-02-27T03:06:57.825Z"><meta property="article:author" content="www.luoguibin.top"><meta property="article:tag" content="规范"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://www.luoguibin.top/images/%E5%89%8D%E7%AB%AF/2016-12-15_web%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E6%95%B4%E7%90%86%E6%80%BB%E7%BB%93/1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.luoguibin.top/2016/12/15/%E5%89%8D%E7%AB%AF/2016-12-15_web%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E6%95%B4%E7%90%86%E6%80%BB%E7%BB%93/"},"headline":"web项目开发规范整理总结","image":["http://www.luoguibin.top/images/%E5%89%8D%E7%AB%AF/2016-12-15_web%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E6%95%B4%E7%90%86%E6%80%BB%E7%BB%93/1.png"],"datePublished":"2016-12-15T06:58:45.000Z","dateModified":"2024-02-27T03:06:57.825Z","author":{"@type":"Person","name":"www.luoguibin.top"},"publisher":{"@type":"Organization","name":"www.luoguibin.top","logo":{"@type":"ImageObject","url":{"text":"luoguibin"}}},"description":"最近开发了两个项目，基于在php中嵌入html的模式开发的，所以总结了些规范，可能不对，如有错误，欢迎指正。"}</script><link rel="canonical" href="http://www.luoguibin.top/2016/12/15/%E5%89%8D%E7%AB%AF/2016-12-15_web%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E6%95%B4%E7%90%86%E6%80%BB%E7%BB%93/"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">luoguibin</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2016-12-15T06:58:45.000Z" title="2016/12/15 14:58:45">2016-12-15</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="level-item">14 分钟读完 (大约2074个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">web项目开发规范整理总结</h1><div class="content"><p>最近开发了两个项目，基于在php中嵌入html的模式开发的，所以总结了些规范，可能不对，如有错误，欢迎指正。</p>
+<span id="more"></span>
+
+<h1 id="类、函数、变量名命名："><a href="#类、函数、变量名命名：" class="headerlink" title="类、函数、变量名命名："></a>类、函数、变量名命名：</h1><p>1、定义类时，全部拼音的首字母必须大写；如Person，ClassDemo；（帕斯卡命名法）；也可以用带下斜杆的匈牙利命名法进行命名，如    head_navigation。</p>
+<p>2、在命名函数时，第一个单词的首字母小写，之后每个单词的首字母大写，如printInfo()方法；（驼峰命名法）</p>
+<p>3、php的变量名的标识符：不能以数字开头，可以由英文字母、数字和下划线（_）组成，不能是保留关键字，区分大小写；但是内置结构和关键字以及用户自定义的类名和函数名都是不区分大小写的。</p>
+<p>4、Javascript变量名称规则：变量对大小写敏感，区分大小写【y与Y是不同变量】；变量必须以字母或者下划线开头。</p>
+<h1 id="文件夹与文件名命名："><a href="#文件夹与文件名命名：" class="headerlink" title="文件夹与文件名命名："></a>文件夹与文件名命名：</h1><p>建立php程序文件名和目录名的命名均使用有意义的英文方式命名，不使用拼音或无意义的英文命名，同时必须均使用小写英文，多个词之间使用_链接。</p>
+<p>系统结构：<br><img src="/images/%E5%89%8D%E7%AB%AF/2016-12-15_web%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E6%95%B4%E7%90%86%E6%80%BB%E7%BB%93/1.png"></p>
+<h1 id="安全规则："><a href="#安全规则：" class="headerlink" title="安全规则："></a>安全规则：</h1><p>1、对敏感数据的传输要采用https。</p>
+<p>2、logs:确保对关键用户操作保存了完整的用户访问记录；</p>
+<p>3、对内部使用或供合作者使用的产品， 要考虑增加访问控制；</p>
+<p>4、严格的过滤和合法性验证:不推荐使用直接的$_POST和$_GET的方式进行获取参数，而是通过XXX_yiv的方式获取和过滤处理。（类似thinkPHP的I函数）；</p>
+<p>5、先声明再使用：php的代码要求先声明再使用，否则会出错。</p>
+<h1 id="html"><a href="#html" class="headerlink" title="html:"></a>html:</h1><p>1、xhtml区分大小写，xhtml要求标签名、属性名、值都要小写，并且要有双引号和标签闭合。因为XHTML文档是XML应用产物，XML是区分大小写的，所以<br>和<BR>会被认为是两种不同的标签；</p>
+<p>2、语义化：使用符合语义的标签书写 HTML 文档, 选择恰当的元素表达所需的含义；</p>
+<p>结构性元素</p>
+<ul>
+<li>p 表示段落. 只能包含内联元素, 不能包含块级元素；</li>
+<li>li 本身无特殊含义, 可用于布局. 几乎可以包含任何元素；</li>
+<li>br 表示换行符；</li>
+<li>hr 表示水平分割线；</li>
+<li>h1-h6 表示标题. 其中 h1 于表示当前页面最重要的内容的标题;</li>
+<li>blockquote 表示引用, 可以包多个段落. 请勿纯粹为了缩进而使用blockquote, 大部分浏览器默认将 blockquote 渲染为带有左右缩进;</li>
+<li>pre 表示一段格式化好的文本；</li>
+</ul>
+<p>头部元素</p>
+<ul>
+<li>title 每个页面必须有且仅有一个 title 元素;</li>
+<li>base 可用场景：首页、频道等大部分链接都为新窗口打开的页面;</li>
+<li>link用于引入 css 资源时, 可省去 media(默认为all) 和 type(默认为text&#x2F;css) 属性;</li>
+<li>style type 默认为 text&#x2F;css, 可以省去;</li>
+<li>script type 属性可以省去; 不赞成使用lang属性; 不要使用古老的&lt;!– &#x2F;&#x2F;–&gt;这种hack脚本, 它用于阻止第一代浏览器(Netscape 1和Mosaic)将脚本显示成文字;</li>
+<li>noscript 在用户代理不支持 JavaScript 的情况下提供说明；</li>
+</ul>
+<p>文本元素</p>
+<ul>
+<li>a 存在 href 属性时表示链接, 无 href 属性但有 name 属性表示锚点;</li>
+<li>em,strong em 表示句意强调, 加与不加会引起语义变化, 可用于表示不同的心情或语调;strong 表示重要性强调, 可用于局部或全局, strong强调的是重要性, 不会改变句意;</li>
+<li>abbr 表示缩写;</li>
+<li>sub,sup 主要用于数学和化学公式, sup还可用于脚注;</li>
+<li>span 本身无特殊含义;</li>
+<li>ins,del 分别表示从文档中增加(插入)和删除；</li>
+</ul>
+<p>媒体元素</p>
+<ul>
+<li>img 请勿将img元素作为定位布局的工具, 不要用他显示空白图片; 必要时给img元素增加alt属性;</li>
+<li>object 可以用来插入Flash;</li>
+</ul>
+<p>列表元素</p>
+<ul>
+<li>dl 表示关联列表, dd是对dt的解释; dt和dd的对应关系比较随意：一个dt对应多个dd、多个dt对应一个dd、多个dt对应多个dd, 都合法; 可用于名词&#x2F;单词解释、日程列表、站点目录</li>
+<li>ul 表示无序列表;</li>
+<li>ol 表示有序列表, 可用于排行榜等;</li>
+<li>li 表示列表项, 必须是ul&#x2F;ol的子元素;</li>
+</ul>
+<p>表单元素</p>
+<ul>
+<li>推荐使用 button 代替 input, 但必须声明 type;</li>
+<li>推荐使用 fieldset, legend 组织表单；</li>
+<li>表单元素的 name 不能设定为 action, enctype, method, novalidate, target, submit 会导致表单提交混乱；</li>
+</ul>
+<p>大小写，属性值：元素的标签名和属性值都必须为小写，属性值必须加双引号。</p>
+<h1 id="css"><a href="#css" class="headerlink" title="css:"></a>css:</h1><p>1、缩进：使用一个tab（四个空格）；</p>
+<p>2、分号：每个属性声明末尾都要加分号；</p>
+<p>3、空格：<br>（1）不需要空格的情况：<em>属性名后；</em>多个规则的，前；*!important !后；<em>行末不要有多余的空格。<br>（2）需要空格的情况：</em>属性值前；<em>选择器&gt;,+,~前后；</em>{ 前；*!important !前；*@else 前后；* 属性值中的，前；*注释&#x2F;*后 *&#x2F;前；</p>
+<p>4、空行：<br>（1）、文件最后保留一个空行<br>（2）}最好跟一个空行；</p>
+<p>5、换行：<br>（1）不需要换行：{ 前；</p>
+<p>（2）需要换行： *{后和}前 ； <em>每个属性独占一行；</em>多个规则的分割符，后；</p>
+<p>6、注释：*统一用&#x2F;**&#x2F;； <em>缩进与下一行代码保持一致 ；</em>可位于一个代码的末尾，与代码间隔一个空格；</p>
+<p>7、引号：  <em>最外层统一使用双引号；</em>url要用双引号；*选择器中的属性值要用双引号；</p>
+<p>8、命名：*css中的元素名称，id和类的命名也是区分大小写的 ;  <em>类名用小写字母，以中划线-分割，匈牙利命名法；</em>id用驼峰命名法；</p>
+<p>9、属性声明：相关的属性声明做分组处理，组与组之间空一行；</p>
+<p>10、颜色：使用颜色16进制小写字母，且尽量简写 如 #666；</p>
+<p>11、属性简写：属性简写需要你非常清楚属性值的正确顺序，而且在大多数情况下并不需要设置属性简写中包含的所有值，所以建议尽量分开声明会更加清晰；margin 和 padding 相反，需要使用简写；</p>
+<p>12、另外项：不允许有空的规则；元素选择器要用小写；去掉小数点前面的0；属性值0后面不加单位；禁止滥用！important;无前缀的标准属性应写在有前缀的前面；尽量少使用*选择器；用border:0代替border:none。</p>
+<h1 id="图片规范"><a href="#图片规范" class="headerlink" title="图片规范"></a>图片规范</h1><p>1、所有的元素类图片均放在images中；</p>
+<p>2、命名全部用小写英文字母&#x2F;数字&#x2F;_的组合，其中不得包含汉字&#x2F;空格&#x2F;特殊字符；尽量使用易懂的词汇；</p>
+<p>3、在保证视觉效果的情况下选择最小的图片格式与图片质量，以减少加载时间；</p>
+<p>4、运用css sprite 技术集中小的背景图或图标，减少页面http请求，但注意请务必在对应的sprite　psd 源图中画参画参考线；</p>
+<p>。。。。。。。</p>
+<p>以后遇到一些要注意的地方再添加上。</p>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E8%A7%84%E8%8C%83/">规范</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2017/02/18/%E5%89%8D%E7%AB%AF/2017-02-18_js%E5%88%A4%E6%96%AD%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E3%80%81pc%E7%AB%AF%E3%80%81android%E3%80%81iPhone%E3%80%81%E6%98%AF%E5%90%A6%E4%B8%BA%E5%BE%AE%E4%BF%A1%E3%80%81%E5%BE%AE%E5%8D%9A%E3%80%81qq%E7%A9%BA%E9%97%B4%20copy/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">js判断移动设备、pc端、android、iPhone、是否为微信、微博、qq空间</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2016/11/21/%E6%9C%8D%E5%8A%A1%E5%99%A8/2016-11-21_Linux%20%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/"><span class="level-item">Linux指令大全</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/images/logo.png" alt="luoguibin"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">luoguibin</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">9</p></a></div></div></nav></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%90%8E%E7%AB%AF/"><span class="level-start"><span class="level-item">后端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="level-start"><span class="level-item">工具</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="level-start"><span class="level-item">数据库</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"><span class="level-start"><span class="level-item">服务器</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Markdown/"><span class="tag">Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/css/"><span class="tag">css</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/js/"><span class="tag">js</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux/"><span class="tag">linux</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mysql/"><span class="tag">mysql</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"><span class="tag">虚拟机</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%A7%84%E8%8C%83/"><span class="tag">规范</span><span class="tag">1</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#类、函数、变量名命名："><span class="level-left"><span class="level-item">1</span><span class="level-item">类、函数、变量名命名：</span></span></a></li><li><a class="level is-mobile" href="#文件夹与文件名命名："><span class="level-left"><span class="level-item">2</span><span class="level-item">文件夹与文件名命名：</span></span></a></li><li><a class="level is-mobile" href="#安全规则："><span class="level-left"><span class="level-item">3</span><span class="level-item">安全规则：</span></span></a></li><li><a class="level is-mobile" href="#html"><span class="level-left"><span class="level-item">4</span><span class="level-item">html:</span></span></a></li><li><a class="level is-mobile" href="#css"><span class="level-left"><span class="level-item">5</span><span class="level-item">css:</span></span></a></li><li><a class="level is-mobile" href="#图片规范"><span class="level-left"><span class="level-item">6</span><span class="level-item">图片规范</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">luoguibin</a><p class="is-size-7"><span>&copy; 2024 www.luoguibin.top</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="粤ICP备2023011716号-1" href="https://beian.miit.gov.cn/">粤ICP备2023011716号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
